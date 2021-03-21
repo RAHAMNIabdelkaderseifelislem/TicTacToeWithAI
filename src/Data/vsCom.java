@@ -104,8 +104,9 @@ public class vsCom extends JFrame{
 						pos[k][t]=x;
 						board[k][t].setFont(font);
 						board[k][t].setEnabled(false);
+						//winner();
+						comR();
 						winner();
-						comR01();
 					}
 				});
 			}
@@ -272,22 +273,23 @@ public class vsCom extends JFrame{
 		tokenpositions=0;
 		for(int i=0;i<3;i++) {
 			for(int j=0;j<3;j++) {
-				if((pos[i][j]==1)||(pos[i][j]==2)) {
+				if((pos[i][j]==11)||(pos[i][j]==12)) {
 					tokenpositions++;
 				}
 			}
 		}
 		if(tokenpositions == 9) {
 			return true;
-		}
+		}else {
 		return false;
+		}
 	}
 	public void visbile(boolean set) {
 		this.setVisible(set);
 	}
 	public void comR01() {
 		if((pos[0][0]==pos[0][1])&&(pos[0][0]==11)) {
-			if(pos[0][2] != 12) {
+			if(tooken(0, 2)) {
 				pos[0][2] = 12;
 				board[0][2].setText("O");
 				board[0][2].setFont(font);
@@ -298,11 +300,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR02();
 		}
-		winner();
+		//winner();
 	}
 	public void comR02() {
 		if((pos[0][0]==pos[0][2])&&(pos[0][0]==11)) {
-			if(pos[0][1] != 12) {
+			if(tooken(0, 1)) {
 				pos[0][1] = 12;
 				board[0][1].setText("O");
 				board[0][1].setFont(font);
@@ -313,11 +315,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR03();
 		}
-		winner();
+		//winner();
 	}
 	public void comR03() {
 		if((pos[0][2]==pos[0][1])&&(pos[0][1]==11)) {
-			if(pos[0][0] != 12) {
+			if(tooken(0, 0)) {
 				pos[0][0] = 12;
 				board[0][0].setText("O");
 				board[0][0].setFont(font);
@@ -328,11 +330,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR04();
 		}
-		winner();
+		//winner();
 	}
 	public void comR04() {
 		if((pos[0][0]==pos[1][0])&&(pos[0][0]==11)) {
-			if(pos[2][0] != 12) {
+			if(tooken(2, 0)) {
 				pos[2][0] = 12;
 				board[2][0].setText("O");
 				board[2][0].setFont(font);
@@ -343,11 +345,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR05();
 		}
-		winner();
+		//winner();
 	}
 	public void comR05() {
 		if((pos[0][0]==pos[2][0])&&(pos[0][0]==11)) {
-			if(pos[1][0] != 12) {
+			if(tooken(1, 0)) {
 				pos[1][0] = 12;
 				board[1][0].setText("O");
 				board[1][0].setFont(font);
@@ -358,11 +360,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR06();
 		}
-		winner();
+		//winner();
 	}
 	public void comR06() {
 		if((pos[1][0]==pos[2][0])&&(pos[1][0]==11)) {
-			if(pos[0][0] != 12) {
+			if(tooken(0, 0)) {
 				pos[0][0] = 12;
 				board[0][0].setText("O");
 				board[0][0].setFont(font);
@@ -373,11 +375,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR07();
 		}
-		winner();
+		//winner();
 	}
 	public void comR07() {
 		if((pos[1][0]==pos[1][1])&&(pos[1][0]==11)) {
-			if(pos[1][2] != 12) {
+			if(tooken(1, 2)) {
 				pos[1][2] = 12;
 				board[1][2].setText("O");
 				board[1][2].setFont(font);
@@ -388,11 +390,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR08();
 		}
-		winner();
+		//winner();
 	}
 	public void comR08() {
 		if((pos[1][0]==pos[1][2])&&(pos[1][0]==11)) {
-			if(pos[1][1] != 12) {
+			if(tooken(1, 1)) {
 				pos[1][1] = 12;
 				board[1][1].setText("O");
 				board[1][1].setFont(font);
@@ -403,11 +405,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR09();
 		}
-		winner();
+		//winner();
 	}
 	public void comR09() {
 		if((pos[1][2]==pos[1][1])&&(pos[1][1]==11)) {
-			if(pos[1][0] != 12) {
+			if(tooken(1, 0)) {
 				pos[1][0] = 12;
 				board[1][0].setText("O");
 				board[1][0].setFont(font);
@@ -418,11 +420,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR10();
 		}
-		winner();
+		//winner();
 	}
 	public void comR10() {
 		if((pos[1][1]==pos[0][1])&&(pos[0][1]==11)) {
-			if(pos[1][2] != 12) {
+			if(tooken(1, 2)) {
 				pos[1][2] = 12;
 				board[1][2].setText("O");
 				board[1][2].setFont(font);
@@ -433,11 +435,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR11();
 		}
-		winner();
+		//winner();
 	}
 	public void comR11() {
 		if((pos[2][1]==pos[0][1])&&(pos[0][1]==11)) {
-			if(pos[1][1] != 12) {
+			if(tooken(1, 1)) {
 				pos[1][1] = 12;
 				board[1][1].setText("O");
 				board[1][1].setFont(font);
@@ -448,11 +450,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR12();
 		}
-		winner();
+		//winner();
 	}
 	public void comR12() {
 		if((pos[2][1]==pos[1][1])&&(pos[1][1]==11)) {
-			if(pos[0][1] != 12) {
+			if(tooken(0, 1)) {
 				pos[0][1] = 12;
 				board[0][1].setText("O");
 				board[0][1].setFont(font);
@@ -463,11 +465,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR13();
 		}
-		winner();
+		//winner();
 	}
 	public void comR13() {
 		if((pos[2][0]==pos[2][1])&&(pos[2][0]==11)) {
-			if(pos[2][2] != 12) {
+			if(tooken(2, 2)) {
 				pos[2][2] = 12;
 				board[2][2].setText("O");
 				board[2][2].setFont(font);
@@ -478,11 +480,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR14();
 		}
-		winner();
+		//winner();
 	}
 	public void comR14() {
 		if((pos[2][0]==pos[2][2])&&(pos[2][0]==11)) {
-			if(pos[2][1] != 12) {
+			if(tooken(2, 1)) {
 				pos[2][1] = 12;
 				board[2][1].setText("O");
 				board[2][1].setFont(font);
@@ -493,11 +495,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR15();
 		}
-		winner();
+		//winner();
 	}
 	public void comR15() {
 		if((pos[2][2]==pos[2][1])&&(pos[2][1]==11)) {
-			if(pos[2][0] != 12) {
+			if(tooken(2, 0)) {
 				pos[2][0] = 12;
 				board[2][0].setText("O");
 				board[2][0].setFont(font);
@@ -508,11 +510,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR16();
 		}
-		winner();
+		//winner();
 	}
 	public void comR16() {
 		if((pos[0][2]==pos[1][2])&&(pos[0][2]==11)) {
-			if(pos[2][2] != 12) {
+			if(tooken(2, 2)) {
 				pos[2][2] = 12;
 				board[2][2].setText("O");
 				board[2][2].setFont(font);
@@ -523,11 +525,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR17();
 		}
-		winner();
+		//winner();
 	}
 	public void comR17() {
 		if((pos[0][2]==pos[2][2])&&(pos[2][2]==11)) {
-			if(pos[1][2] != 12) {
+			if(tooken(1, 2)) {
 				pos[1][2] = 12;
 				board[1][2].setText("O");
 				board[1][2].setFont(font);
@@ -538,11 +540,11 @@ public class vsCom extends JFrame{
 		}else{
 			comR18();
 		}
-		winner();
+		//winner();
 	}
 	public void comR18(){
 		if((pos[2][2]==pos[2][1])&&(pos[2][2]==11)) {
-			if(pos[0][2] != 12) {
+			if(tooken(0, 2)) {
 				pos[0][2] = 12;
 				board[0][2].setText("O");
 				board[0][2].setFont(font);
@@ -553,11 +555,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR19();
 		}
-		winner();
+		//winner();
 	}
 	public void comR19() {
 		if((pos[0][0]==pos[1][1])&&(pos[0][0]==11)) {
-			if(pos[2][2] != 12) {
+			if(tooken(2, 2)) {
 				pos[2][2] = 12;
 				board[2][2].setText("O");
 				board[2][2].setFont(font);
@@ -568,11 +570,11 @@ public class vsCom extends JFrame{
 		}else{
 			comR20();
 		}
-		winner();
+		//winner();
 	}
 	public void comR20() {
 		if((pos[0][0]==pos[2][2])&&(pos[0][0]==11)) {
-			if(pos[1][1] != 12) {
+			if(tooken(1, 1)) {
 				pos[1][1] = 12;
 				board[1][1].setText("O");
 				board[1][1].setFont(font);
@@ -580,14 +582,14 @@ public class vsCom extends JFrame{
 			}else {
 				comR21();
 			}
-			winner();
+			//winner();
 		}else {
 			comR21();
 		}
 	}
 	public void comR21() {
 		if((pos[2][2]==pos[1][1])&&(pos[1][1]==11)) {
-			if(pos[0][0] != 12) {
+			if(tooken(0, 0)) {
 				pos[0][0] = 12;
 				board[0][0].setText("O");
 				board[0][0].setFont(font);
@@ -598,11 +600,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR22();
 		}
-		winner();
+		//winner();
 	}
 	public void comR22() {
 		if((pos[0][2]==pos[1][1])&&(pos[0][2]==11)) {
-			if(pos[2][0] != 12) {
+			if(tooken(2, 0)) {
 				pos[2][0] = 12;
 				board[2][0].setText("O");
 				board[2][0].setFont(font);
@@ -613,11 +615,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR23();
 		}
-		winner();
+		//winner();
 	}
 	public void comR23() {
 		if((pos[0][2]==pos[2][0])&&(pos[0][2]==11)) {
-			if(pos[1][1] != 12) {
+			if(tooken(1, 1)) {
 				pos[1][1] = 12;
 				board[1][1].setText("O");
 				board[1][1].setFont(font);
@@ -628,11 +630,11 @@ public class vsCom extends JFrame{
 		}else {
 			comR24();
 		}
-		winner();
+		//winner();
 	}
 	public void comR24() {
 		if((pos[2][0]==pos[0][1])&&(pos[2][0]==11)) {
-			if(pos[0][2] != 12) {
+			if(tooken(0, 2)) {
 				pos[0][2] = 12;
 				board[0][2].setText("O");
 				board[0][2].setFont(font);
@@ -643,32 +645,259 @@ public class vsCom extends JFrame{
 		}else {
 			comR25();
 		}
-		winner();
+		//winner();
 	}
 	public void comR25() {
 		comx = (int)(Math.random() * 3);
-		System.out.println(comx);
+		//System.out.println(comx);
 		comy = (int)(Math.random() * 3);
-		System.out.println(comy);
-		while(!tooken(comx,comy)) {
-			comx = (int)(Math.random() * 3);
-			System.out.println(comx);
-			comy = (int)(Math.random() * 3);
-			System.out.println(comy);
+		//System.out.println(comy);
+		boolean places = false;
+		if(!boardfull()) {
+			while(!tooken(comx,comy)) {
+				comx = (int)(Math.random() * 3);
+				//System.out.println(comx);
+				comy = (int)(Math.random() * 3);
+				//System.out.println(comy);
+			}
+		}else {
+			
 		}
 		pos[comx][comy]= 12;
 		board[comx][comy].setText("O");
 		board[comx][comy].setFont(font);
 		board[comx][comy].setEnabled(false);
-		winner();
+		//winner();
 	}
 	public boolean tooken(int x,int y) {
 		if((pos[x][y] != 11)&&(pos[x][y] != 12)) {
 			return true;
+		}else {
+			return false;
 		}
-		return false;
 	}
 	public void visible(boolean b) {
 		this.setVisible(b);
+	}
+public void comR() {	
+		if((pos[0][0]==pos[0][1])&&(pos[0][0]==12)) {
+			if(tooken(0, 2)) {
+				pos[0][2] = 12;
+				board[0][2].setText("O");
+				board[0][2].setFont(font);
+				board[0][2].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[0][0]==pos[0][2])&&(pos[0][0]==12)) {
+			if(tooken(0, 1)) {
+				pos[0][1] = 12;
+				board[0][1].setText("O");
+				board[0][1].setFont(font);
+				board[0][1].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[0][2]==pos[0][1])&&(pos[0][1]==12)) {
+			if(tooken(0, 0)) {
+				pos[0][0] = 12;
+				board[0][0].setText("O");
+				board[0][0].setFont(font);
+				board[0][0].setEnabled(false);	
+			}else {
+				comR01();
+			}
+		}else if((pos[0][0]==pos[1][0])&&(pos[0][0]==12)) {
+			if(tooken(2, 0)) {
+				pos[2][0] = 12;
+				board[2][0].setText("O");
+				board[2][0].setFont(font);
+				board[2][0].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[0][0]==pos[2][0])&&(pos[0][0]==12)) {
+			if(tooken(1, 0)) {
+				pos[1][0] = 12;
+				board[1][0].setText("O");
+				board[1][0].setFont(font);
+				board[1][0].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[1][0]==pos[2][0])&&(pos[1][0]==12)) {
+			if(tooken(0, 0)) {
+				pos[0][0] = 12;
+				board[0][0].setText("O");
+				board[0][0].setFont(font);
+				board[0][0].setEnabled(false);	
+			}else {
+				comR01();
+			}
+		}else if((pos[1][0]==pos[1][1])&&(pos[1][0]==12)) {
+			if(tooken(1, 2)) {
+				pos[1][2] = 12;
+				board[1][2].setText("O");
+				board[1][2].setFont(font);
+				board[1][2].setEnabled(false);	
+			}else {
+				comR01();
+			}
+		}else if((pos[1][0]==pos[1][2])&&(pos[1][0]==12)) {
+			if(tooken(1, 1)) {
+				pos[1][1] = 12;
+				board[1][1].setText("O");
+				board[1][1].setFont(font);
+				board[1][1].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[1][2]==pos[1][1])&&(pos[1][1]==12)) {
+			if(tooken(1, 0)) {
+				pos[1][0] = 12;
+				board[1][0].setText("O");
+				board[1][0].setFont(font);
+				board[1][0].setEnabled(false);	
+			}else {
+				comR01();
+			}
+		}else if((pos[1][1]==pos[0][1])&&(pos[0][1]==12)) {
+			if(tooken(1, 2)) {
+				pos[1][2] = 12;
+				board[1][2].setText("O");
+				board[1][2].setFont(font);
+				board[1][2].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[2][1]==pos[0][1])&&(pos[0][1]==12)) {
+			if(tooken(1, 1)) {
+				pos[1][1] = 12;
+				board[1][1].setText("O");
+				board[1][1].setFont(font);
+				board[1][1].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[2][1]==pos[1][1])&&(pos[1][1]==12)) {
+			if(tooken(0, 1)) {
+				pos[0][1] = 12;
+				board[0][1].setText("O");
+				board[0][1].setFont(font);
+				board[0][1].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[2][0]==pos[2][1])&&(pos[2][0]==12)) {
+			if(tooken(2, 2)) {
+				pos[2][2] = 12;
+				board[2][2].setText("O");
+				board[2][2].setFont(font);
+				board[2][2].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[2][0]==pos[2][2])&&(pos[2][0]==12)) {
+			if(tooken(2, 1)) {
+				pos[2][1] = 12;
+				board[2][1].setText("O");
+				board[2][1].setFont(font);
+				board[2][1].setEnabled(false);
+			}else {
+				comR01();
+			}
+		}else if((pos[2][2]==pos[2][1])&&(pos[2][1]==12)) {
+			if(tooken(2, 0)) {
+				pos[2][0] = 12;
+				board[2][0].setText("O");
+				board[2][0].setFont(font);
+				board[2][0].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[0][2]==pos[1][2])&&(pos[0][2]==12)) {
+			if(tooken(2, 2)) {
+				pos[2][2] = 12;
+				board[2][2].setText("O");
+				board[2][2].setFont(font);
+				board[2][2].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[0][2]==pos[2][2])&&(pos[2][2]==12)) {
+			if(tooken(1, 2)) {
+				pos[1][2] = 12;
+				board[1][2].setText("O");
+				board[1][2].setFont(font);
+				board[1][2].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[2][2]==pos[2][1])&&(pos[2][2]==12)) {
+			if(tooken(0,2)) {
+				pos[0][2] = 12;
+				board[0][2].setText("O");
+				board[0][2].setFont(font);
+				board[0][2].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[0][0]==pos[1][1])&&(pos[0][0]==12)) {
+			if(tooken(2, 2)) {
+				pos[2][2] = 12;
+				board[2][2].setText("O");
+				board[2][2].setFont(font);
+				board[2][2].setEnabled(false);				
+			}else {
+				comR01();
+			}
+		}else if((pos[0][0]==pos[2][2])&&(pos[0][0]==12)) {
+			if(tooken(1, 1)) {
+				pos[1][1] = 12;
+				board[1][1].setText("O");
+				board[1][1].setFont(font);
+				board[1][1].setEnabled(false);
+			}else {
+				comR01();
+			}
+		}else if((pos[2][2]==pos[1][1])&&(pos[1][1]==12)) {
+			if(tooken(0, 0)) {
+				pos[0][0] = 12;
+				board[0][0].setText("O");
+				board[0][0].setFont(font);
+				board[0][0].setEnabled(false);
+			}else {
+				comR01();
+			}
+		}else if((pos[0][2]==pos[1][1])&&(pos[0][2]==12)) {
+			if(tooken(2,0)) {
+				pos[2][0] = 12;
+				board[2][0].setText("O");
+				board[2][0].setFont(font);
+				board[2][0].setEnabled(false);
+			}else {
+				comR01();
+			}
+		}else if((pos[0][2]==pos[2][0])&&(pos[0][2]==12)) {
+			if(tooken(1,1)) {
+				pos[1][1] = 12;
+				board[1][1].setText("O");
+				board[1][1].setFont(font);
+				board[1][1].setEnabled(false);
+			}else {
+				comR01();
+			}
+		}else if((pos[2][0]==pos[0][1])&&(pos[2][0]==12)) {
+			if(tooken(0,2)) {
+				pos[0][2] = 12;
+				board[0][2].setText("O");
+				board[0][2].setFont(font);
+				board[0][2].setEnabled(false);
+			}else {
+				comR01();
+			}
+		}else {
+			comR01();
+		}
 	}
 }
